@@ -25,6 +25,7 @@
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        navigate("/");
         try {
         const response = await fetch("http://localhost:5000/submit-form", {
             method: "POST",
@@ -33,7 +34,7 @@
             },
             body: JSON.stringify(formData),
         });
-        navigate("/");
+        
         if (response.ok) {
             console.log("Form submitted successfully");
             // Redirect to homepage after successful submission
