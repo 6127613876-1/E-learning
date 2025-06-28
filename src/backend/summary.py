@@ -2,9 +2,9 @@ from flask import Flask, jsonify, render_template_string, request, send_file
 import google.generativeai as genai
 import json
 import os
-
-# Set API Key (Replace with your actual key)
-API_KEY = "AIzaSyBvxyDsdmx58DWtzJOgaygRWdqwSKsYGBs"
+from dotenv import load_dotenv
+load_dotenv()
+API_KEY = os.getenv('API_KEY')
 
 # Configure Google Generative AI with API key
 genai.configure(api_key=API_KEY)
